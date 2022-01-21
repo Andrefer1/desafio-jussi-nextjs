@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Banner } from "../components/Banner";
 import { Stores } from "../components/Stores";
 import { Solutions } from "../components/Solutions";
+import { Presentation } from "../components/Presentation";
 
 const Home: NextPage = () => {
   return (
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
       <Banner />
       <Stores />
       <Solutions />
+      <Presentation />
     </div>
   );
 };
