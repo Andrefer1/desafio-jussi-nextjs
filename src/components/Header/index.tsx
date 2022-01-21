@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Search } from "./Search";
 
-import LogoJussi from "../../../public/image/Header/logoJussiVectorGreen.png";
+import LogoJussi from "../../../public/images/Header/logoJussiVectorGreen.png";
 
 import styles from "./header.module.scss";
 

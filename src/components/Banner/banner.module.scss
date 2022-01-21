@@ -1,0 +1,126 @@
+.container {
+  max-width: 1440px;
+  min-height: 560px;
+  padding: 10px 20px;
+  background: var(--green-jussi);
+  margin: 0 auto;
+  position: relative;
+  top: 84px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 1080px;
+
+  display: flex;
+  justify-content: space-between;
+
+  .information {
+    min-width: 320px;
+    max-width: 420px;
+    margin: auto 0;
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    p {
+      margin-top: 16px;
+      margin-bottom: 44px;
+    }
+
+    a {
+      width: 200px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 6px;
+      background: None;
+      padding: 12px 12px;
+      transition: background 0.3s;
+
+      &:hover {
+        color: var(--white);
+        border-color: var(--pink-jussi);
+        background: var(--pink-jussi);
+      }
+    }
+  }
+
+  .cards {
+    display: flex;
+    position: relative;
+    margin-top: 35px;
+
+    & > div {
+      margin-left: 10px;
+    }
+
+    #card1 {
+      position: relative;
+      margin: 145px -90px 0 0;
+    }
+
+    #card2 {
+      position: relative;
+      z-index: 1;
+      transform: translateY(-10px);
+    }
+
+    #card3 {
+      position: relative;
+      margin: 200px 0 0 -80px;
+    }
+  }
+}
+
+@media (max-width: 845px), (max-device-width: 500px) {
+  .content {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .information {
+      min-width: 320px;
+      max-width: 600px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .cards {
+      height: 550px;
+    }
+  }
+}
+
+@media (max-width: 485px) {
+  .content {
+    .information {
+      min-width: 120px;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .cards {
+      display: block;
+      height: 803px;
+
+      #card1 {
+        position: relative;
+        margin: 0;
+      }
+
+      #card2 {
+        position: relative;
+        z-index: 0;
+        transform: translateY(0);
+        margin: 10px 10px 0 0;
+      }
+      #card3 {
+        position: relative;
+        margin: 10px 0 0 0;
+      }
+    }
+  }
+}
