@@ -26,21 +26,21 @@ export function Banner() {
             image={Fridge}
             alt="Geladeira cinza com duas portas e detalhes em preto"
             text="Mais detalhes"
-            href="#geladeira-cinza"
+            href="geladeira-cinza"
           />
           <Card
             id={styles.card2}
             image={FoodMixer}
             alt="Batedeira de bolo vermelha no estilo retrô"
             text="Comprar em 12x"
-            href="#batedeira-bolo"
+            href="batedeira-bolo"
           />
           <Card
             id={styles.card3}
             image={Whisky}
             alt="Garrafa cheia de whisky Black Label"
             text="Adicionar à sacola"
-            href="#garrafa-whisky"
+            href="garrafa-whisky"
           />
         </section>
       </div>

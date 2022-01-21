@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/Link";
 
 import styles from "./card.module.scss";
 
@@ -15,7 +16,9 @@ export function Card({ id, image, alt, text, href }: CardProps) {
     <div id={id} className={styles.container}>
       <div className={styles.content}>
         <Image src={image} alt={alt} height={500} />
-        <a href={href}>{text}</a>
+        <Link href={`#${href}`}>
+          <a>{text}</a>
+        </Link>
       </div>
     </div>
   );

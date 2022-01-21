@@ -63,6 +63,7 @@
 
 @media (max-width: 502px) {
   .content {
+    padding-top: 10px;
     #stores {
       justify-content: space-around;
 
@@ -70,12 +71,6 @@
         margin: 0 10px 10px 0;
       }
     }
-  }
-}
-
-@media (max-width: 485px) {
-  .container {
-    top: 5.1rem;
   }
 }
 
