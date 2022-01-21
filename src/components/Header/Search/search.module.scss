@@ -1,0 +1,67 @@
+.container {
+  border: solid 1px var(--grey-50);
+  border-radius: 24px;
+  width: 240px;
+  height: 45px;
+
+  input:focus ~ #searchResult {
+    display: block;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  z-index: 3;
+
+  input {
+    width: 185px;
+    height: 40px;
+    margin-right: 5px;
+    color: var(--pink-jussi);
+    margin-left: 15px;
+
+    &::placeholder {
+      color: var(--pink-jussi);
+    }
+  }
+}
+
+#searchResult {
+  display: none;
+  border: solid 1px var(--grey-50);
+  width: 240px;
+  padding: 8px 0;
+  position: absolute;
+  top: 65px;
+  border-radius: 15px;
+  background: var(--white);
+  z-index: 2;
+
+  div {
+    &:hover {
+      cursor: pointer;
+      background: var(--grey-50);
+
+      .pokemonLink {
+        color: (--pink-jussi);
+      }
+    }
+
+    .pokemonLink {
+      width: 100%;
+      padding: 10px 10px;
+      margin-left: 0;
+
+      p {
+        color: var(--grey-500);
+        font-size: 0.875rem;
+        margin-top: 3px;
+      }
+
+      strong {
+        font-weight: bold;
+      }
+    }
+  }
+}
