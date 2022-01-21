@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 
-// import api from "../../../services/api";
+import api from "../../../services/api";
 
 import styles from "./search.module.scss";
 
@@ -14,15 +14,15 @@ export function Search() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [search, setSearch] = useState("");
 
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const response = await api.get("/");
+  useEffect(() => {
+    const getData = async () => {
+      const response = await api.get("/");
 
-  //     setPokemons(response.data.results);
-  //   };
+      setPokemons(response.data.results);
+    };
 
-  //   getData();
-  // }, []);
+    getData();
+  }, []);
 
   const filteredProducts: Pokemon[] | [] = useMemo(() => {
     const searchLower = search.toLowerCase();
