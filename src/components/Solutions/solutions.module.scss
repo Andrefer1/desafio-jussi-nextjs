@@ -1,0 +1,42 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 56px 20px;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 5rem;
+}
+
+.content {
+  width: 100%;
+  max-width: 1080px;
+  z-index: 3;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+
+    span {
+      color: var(--green-jussi);
+    }
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div {
+      flex: 1 1 200px;
+    }
+  }
+}
+
+@media (max-device-width: 600px) {
+  .content {
+    max-width: 600px;
+  }
+}
