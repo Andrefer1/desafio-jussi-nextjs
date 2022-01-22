@@ -7,6 +7,7 @@ import { Solutions } from "../components/Solutions";
 import { Presentation } from "../components/Presentation";
 import { Promotion } from "../components/Promotion";
 import { Contacts } from "../components/Contacts";
+import { Footer } from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
       <Presentation />
       <Contacts />
       <Promotion />
+      <Footer />
     </div>
   );
 };
