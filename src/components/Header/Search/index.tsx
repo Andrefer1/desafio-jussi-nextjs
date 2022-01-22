@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
+import Link from "next/link";
 
 import api from "../../../services/api";
 
@@ -24,11 +25,11 @@ export function Search() {
     getData();
   }, []);
 
-  const filteredProducts: Pokemon[] | [] = useMemo(() => {
+  const filteredProducts: Pokemon[] | null = useMemo(() => {
     const searchLower = search.toLowerCase();
 
     if (search === "") {
-      return [];
+      return null;
     }
 
     const pokemonsList = pokemons.filter((pokemon) =>
@@ -48,6 +49,10 @@ export function Search() {
     }));
   }, [pokemons, search]);
 
+  function abc(event: any): any {
+    return console.log(123123);
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -61,14 +66,16 @@ export function Search() {
         <FiSearch size={22} id={styles.icon} />
 
         <div id={styles.searchResult}>
-          {filteredProducts.slice(0, 10).map((pokemon: Pokemon) => (
-            <div key={pokemon.name}>
-              <a
-                href={`/solutions/${pokemon.name}`}
-                id={pokemon.name}
-                className={styles.pokemonLink}
-                dangerouslySetInnerHTML={{ __html: pokemon.name }}
-              ></a>
+          {filteredProducts?.slice(0, 10).map((pokemon: Pokemon) => (
+            <div key={pokemon.name} className={styles.product}>
+              <Link href={`${pokemon.url}`}>
+                <a
+                  id={pokemon.name}
+                  onClick={(event) => abc(event)}
+                  className={styles.pokemonLink}
+                  dangerouslySetInnerHTML={{ __html: pokemon.name }}
+                ></a>
+              </Link>
             </div>
           ))}
         </div>

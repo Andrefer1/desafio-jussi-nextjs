@@ -15,32 +15,34 @@ export function Header() {
       return console.log(null);
     }
 
-    if (!navElement.classList.contains("openSidebar")) {
-      navElement.classList.add("openSidebar");
-      return navElement.classList.add(styles.openSidebar);
+    if (!navElement.classList.contains("openMenu")) {
+      navElement.classList.add("openMenu");
+      return navElement.classList.add(styles.openMenu);
     } else {
-      navElement.classList.remove("openSidebar");
-      return navElement.classList.remove(styles.openSidebar);
+      navElement.classList.remove("openMenu");
+      return navElement.classList.remove(styles.openMenu);
     }
   }
 
   return (
     <header className={styles.container}>
       <div className={styles.content}>
-        <Image
-          id={styles.logoJussi}
-          src={LogoJussi}
-          alt="Jüssi: The Business Agency"
-          priority
-        />
+        <div id={styles.divLogoJussi}>
+          <Image
+            id={styles.logoJussi}
+            src={LogoJussi}
+            alt="Jüssi: The Business Agency"
+            priority
+          />
+        </div>
 
         <nav>
-          <div>
+          <div id={styles.links}>
             <a href="#nossas-solucoes">Nossas soluções</a>
             <a href="#conheca-a-jussi">Conheça a Jüssi</a>
           </div>
 
-          <div>
+          <div id={styles.buttonsAndSearch}>
             <Search />
             <button>Login</button>
             <button>

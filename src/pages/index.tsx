@@ -7,7 +7,6 @@ import { Solutions } from "../components/Solutions";
 import { Presentation } from "../components/Presentation";
 import { Promotion } from "../components/Promotion";
 import { Contacts } from "../components/Contacts";
-import { Footer } from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
