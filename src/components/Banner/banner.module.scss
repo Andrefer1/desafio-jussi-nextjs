@@ -39,7 +39,7 @@
       border-radius: 6px;
       background: None;
       padding: 12px 12px;
-      transition: background 0.3s;
+      transition: all 0.3s;
 
       &:hover {
         color: var(--white);
@@ -54,13 +54,9 @@
     position: relative;
     margin-top: 35px;
 
-    & > div {
-      margin-left: 10px;
-    }
-
     #card1 {
       position: relative;
-      margin: 145px -90px 0 0;
+      margin: 145px -80px 0 0;
     }
 
     #card2 {
@@ -70,15 +66,15 @@
 
     #card3 {
       position: relative;
-      margin: 200px 0 0 -80px;
+      margin: 200px 0 0 -90px;
       z-index: 0;
     }
   }
 }
 
-@media (max-width: 845px), (max-device-width: 500px) {
+@media (max-width: 845px) {
   .content {
-    padding: 2rem;
+    padding-top: 2rem;
     justify-content: center;
     flex-wrap: wrap;
 
@@ -87,6 +83,10 @@
       max-width: 600px;
       text-align: center;
       margin-bottom: 15px;
+
+      p {
+        max-width: 600px;
+      }
     }
 
     .cards {
