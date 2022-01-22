@@ -24,7 +24,6 @@ const Home: NextPage = () => {
       <Presentation />
       <Contacts />
       <Promotion />
-      <Footer />
     </div>
   );
 };
