@@ -90,6 +90,7 @@
         text-align: center;
         padding: 12px 12px;
         background: None;
+        transition: all 0.2s;
 
         &:hover {
           border-color: var(--green-jussi);
