@@ -1,6 +1,5 @@
 .container {
   width: 100%;
-  // max-width: 209px;
   min-width: 190px;
   max-height: 281px;
   border-radius: 8px;
@@ -34,10 +33,17 @@
     text-align: center;
     transition: background 0.3s;
     z-index: 3;
+    white-space: nowrap;
 
     &:hover {
       color: var(--white);
       background: var(--pink-jussi);
     }
+  }
+}
+
+@media (max-width: 485px) {
+  .container {
+    box-shadow: 0 2px 32px 0 rgb(0, 0, 0, 0.15);
   }
 }

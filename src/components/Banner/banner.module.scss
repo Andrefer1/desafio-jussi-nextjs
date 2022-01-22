@@ -15,10 +15,11 @@
 
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 
   .information {
     min-width: 320px;
-    max-width: 420px;
+    max-width: 450px;
     margin: auto 0;
 
     h1 {
@@ -28,6 +29,7 @@
     p {
       margin-top: 16px;
       margin-bottom: 44px;
+      max-width: 415px;
     }
 
     a {
@@ -76,6 +78,7 @@
 
 @media (max-width: 845px), (max-device-width: 500px) {
   .content {
+    padding: 2rem;
     justify-content: center;
     flex-wrap: wrap;
 
@@ -94,6 +97,8 @@
 
 @media (max-width: 485px) {
   .content {
+    padding: 2rem;
+
     .information {
       min-width: 120px;
       max-width: 600px;
