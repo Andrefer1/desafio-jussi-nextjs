@@ -31,8 +31,14 @@
   }
 }
 
-@media (max-device-width: 600px) {
+@media (max-width: 516px) {
   .content {
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    h2 {
+      margin: 0 auto;
+    }
   }
 }
