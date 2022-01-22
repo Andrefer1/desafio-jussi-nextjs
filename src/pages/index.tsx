@@ -5,6 +5,7 @@ import { Banner } from "../components/Banner";
 import { Stores } from "../components/Stores";
 import { Solutions } from "../components/Solutions";
 import { Presentation } from "../components/Presentation";
+import { Promotion } from "../components/Promotion";
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       <Stores />
       <Solutions />
       <Presentation />
+      <Promotion />
     </div>
   );
 };
