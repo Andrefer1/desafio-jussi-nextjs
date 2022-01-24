@@ -1,8 +1,6 @@
 .container {
   width: 100%;
-  max-width: 1440px;
   height: 5rem;
-  margin: 0 auto;
   padding: 0 1.25rem;
   position: fixed;
 
@@ -13,8 +11,10 @@
 }
 
 .content {
+  margin: 0 auto;
   display: flex;
   width: 100%;
+  max-width: 1440px;
 
   #logoJussi {
     border: solid 1px;

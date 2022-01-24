@@ -43,34 +43,33 @@
   }
 
   .product {
+    width: 100%;
+    margin-left: 0;
     border: solid 1px transparent;
     border-left: none;
     border-right: none;
+
+    display: block;
 
     &:hover {
       cursor: pointer;
       border: solid 1px var(--pink-jussi);
       border-left: 0;
       border-right: 0;
-
-      .pokemonLink {
-        color: (--pink-jussi);
-      }
+      color: (--pink-jussi);
     }
 
-    .pokemonLink {
-      width: 100%;
-      padding: 10px 10px;
+    width: 100%;
+    padding: 10px 10px;
 
-      // p {
-      //   color: var(--grey-500);
-      //   font-size: 0.875rem;
-      //   margin-top: 3px;
-      // }
+    // p {
+    //   color: var(--grey-500);
+    //   font-size: 0.875rem;
+    //   margin-top: 3px;
+    // }
 
-      strong {
-        font-weight: bold;
-      }
+    strong {
+      font-weight: bold;
     }
   }
 }

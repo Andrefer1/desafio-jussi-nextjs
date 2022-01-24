@@ -8,24 +8,28 @@ import styles from "./search.module.scss";
 
 type Pokemon = {
   name: string;
-  url: string;
+  strongedName?: string;
 };
 
 export function Search() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
     const getData = async () => {
       const response = await api.get("/");
 
-      setPokemons(response.data.results);
+      const pokemonsName = response.data.results.map((pokemon: Pokemon) => ({
+        name: pokemon.name,
+      }));
+
+      setPokemons(pokemonsName);
     };
 
     getData();
   }, []);
 
-  const filteredProducts: Pokemon[] | null = useMemo(() => {
+  const filteredPokemons: Pokemon[] | null = useMemo(() => {
     const searchLower = search.toLowerCase();
 
     if (search === "") {
@@ -38,7 +42,7 @@ export function Search() {
 
     return pokemonsList.map((pokemon) => ({
       ...pokemon,
-      name: ` 
+      strongedName: ` 
       ${pokemon.name.slice(
         0,
         pokemon.name.indexOf(search)
@@ -48,10 +52,6 @@ export function Search() {
       `,
     }));
   }, [pokemons, search]);
-
-  function abc(event: any): any {
-    return console.log(123123);
-  }
 
   return (
     <div className={styles.container}>
@@ -66,18 +66,18 @@ export function Search() {
         <FiSearch size={22} id={styles.icon} />
 
         <div id={styles.searchResult}>
-          {filteredProducts?.slice(0, 10).map((pokemon: Pokemon) => (
-            <div key={pokemon.name} className={styles.product}>
-              <Link href={`${pokemon.url}`}>
+          {filteredPokemons
+            ?.slice(0, 10)
+            .map(({ name, strongedName }: Pokemon) => (
+              <Link key={name} href={`/pokemon/${name}`}>
                 <a
-                  id={pokemon.name}
-                  onClick={(event) => abc(event)}
-                  className={styles.pokemonLink}
-                  dangerouslySetInnerHTML={{ __html: pokemon.name }}
+                  className={styles.product}
+                  dangerouslySetInnerHTML={{
+                    __html: String(strongedName),
+                  }}
                 ></a>
               </Link>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>

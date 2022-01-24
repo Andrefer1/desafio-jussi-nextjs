@@ -9,7 +9,7 @@ import styles from "./footer.module.scss";
 
 export function Footer() {
   return (
-    <div className={styles.container}>
+    <footer className={styles.container}>
       <div className={styles.content}>
         <div>
           <Link href="#wpp-company">
@@ -41,6 +41,6 @@ export function Footer() {
           </Link>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
