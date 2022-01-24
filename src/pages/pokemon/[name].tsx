@@ -3,7 +3,6 @@ import Head from "next/head";
 import styles from "./pokemonPost.module.scss";
 import axios, { AxiosResponse } from "axios";
 import { Pokemon } from "../../components/Pokemon";
-import api from "../../../../services/api";
 
 type Ability = {
   ability: {
