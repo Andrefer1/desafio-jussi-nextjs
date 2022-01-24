@@ -1,8 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 import Link from "next/link";
-
-import api from "../../../services/api";
+import axios from "axios";
 
 import styles from "./search.module.scss";
 
@@ -17,7 +16,9 @@ export function Search() {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await api.get("/");
+      const response = await axios.get(
+        "https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0"
+      );
 
       const pokemonsName = response.data.results.map((pokemon: Pokemon) => ({
         name: pokemon.name,

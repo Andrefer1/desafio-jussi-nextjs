@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { SiPokemon } from "react-icons/si";
 import { CgGhostCharacter } from "react-icons/cg";
 import { MdCatchingPokemon } from "react-icons/md";
@@ -6,9 +8,9 @@ import { IoMdStats } from "react-icons/io";
 import { GiDiscGolfBag, GiSwordsEmblem } from "react-icons/gi";
 import { GrCircleInformation } from "react-icons/gr";
 
-import styles from "./pokemon.module.scss";
 import { AbilityPokemonModal } from "../AbilityPokemonModal";
-import { useState } from "react";
+
+import styles from "./pokemon.module.scss";
 
 type Ability = {
   ability: {
@@ -57,9 +59,16 @@ export function Pokemon({ pokemon }: PokemonProps) {
     setAbilityModal("");
     setModalOpen(!modalOpen);
   }
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
+        <AbilityPokemonModal
+          isOpen={modalOpen}
+          setIsOpen={toggleModal}
+          ability={abilityModal}
+        />
+
         <header>
           <SiPokemon size={100} />
           <div id={styles.content}>
@@ -192,12 +201,6 @@ export function Pokemon({ pokemon }: PokemonProps) {
             </>
           )}
         </div>
-
-        <AbilityPokemonModal
-          isOpen={modalOpen}
-          setIsOpen={toggleModal}
-          ability={abilityModal}
-        />
       </div>
     </div>
   );

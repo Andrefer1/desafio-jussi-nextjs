@@ -2,6 +2,10 @@
   padding-top: 5rem;
   max-width: 1440px;
   padding: 20px;
+  height: calc(100vh - 7rem);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .content {
