@@ -1,3 +1,29 @@
+# CAMPO DE BUSCA
+
+Para o campo de busca, decidiu-se pelo foco na busca pelos nomes do Pokémons. Neste componente, conforme for digitando, é realizado um filtro nos Pokémons que são retornados para o usuário (Figura 1 e Figura 2), onde é retornado o nome do Pokémon desejado.
+
+Figura 1
+
+![Imagem das indicação de produtos ao clicar no campo de busca](./public/images/Readme/SearchResult.PNG)
+
+Figura 2
+
+![Imagem das indicação de produtos ao clicar no campo de busca](./public/images/Readme/FilteredSearchResult.PNG)
+
+Para a consulta dos dados sobre os Pokémons, foi utilizado o Cliente HTTP Axios que tem por objetivo, buscar as informações sobre os produtos por meio do método HTTP GET, onde as informações são armazenadas em uma variável e apresentados na caixa de pesquisa (`./src/components/Header/Search/index.tsx`), conforme explicitado acima.
+
+Para instalar o Axios, execute:
+
+`npm install axios` ou `yarn add axios`
+
+Após pesquisar e selecionar o Pokémon desejado no campo de pequisa, o usuário é redirecionado para outra página, onde são apresentadas informações mais detalhadas sobre o Pokémon, como nome, identificados, peso, altura, habilidades entre outras informações. Ainda nesta página, é permitido ao usuário clicar nos botões de habilidades, para abrir o modal, onde são apresentados detalhes sobre cada uma das habilidades, sendo possível navegar entre as habilidades e descobrir quais Pokémons a compartilham.
+
+Para que isso fosse possível, na página relacioandas aos Pokémons (`./src/page/pokemon/[name].tsx`, onde `[name]` refere-se ao nome dos Pokémons, sendo esta uma rota dinâmica), foi implementado o getStaticPaths que permitiu a dinamicidade das rotas, ao buscar os nomes de todos os Pokémons e armazená-los em uma lista. Logo abaixo, foi feita a implementação do getStaticProps, para a busca e apresentação dos dados sobre o Pokémon desejado. O getStaticProps, foi escolhido em detrimento getServerSideProps, devido à estaticidade dos dados da API, como são dados que dificilmente sofrerão alterações, o getStaticProps será suficiente.
+
+Após buscar as informações sobre o Pokémon, os dados foram devidamente organizados com o auxílio do TypeScript e retornados para o componente, onde foram apresentados para o usuário.
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
