@@ -3,7 +3,6 @@ import axios from "axios";
 import Link from "next/link";
 
 import { Modal } from "../Modal";
-import { Pokemon } from "../Pokemon";
 
 import styles from "./abilityPokemonModal.module.scss";
 
@@ -107,51 +106,60 @@ export function AbilityPokemonModal({
                 <p>{abilityData.id}</p>
               </header>
 
-              <div id={styles.effect_entries}>
-                <h3>Efeitos da habilidade</h3>
-                <div>
-                  {abilityData.effect_entries?.map(
-                    ({ effect, short_effect }, index) => (
-                      <div key={index}>
-                        <p>{short_effect}</p>
-                        <p>{effect}</p>
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
-
-              <div id={styles.effect_changes}>
-                <h3>
-                  Efeitos anteriores que a habilidade teve em outros grupos
-                </h3>
-                <div>
-                  {abilityData.effect_changes?.map(
-                    ({ version_group, effect_entries }) => (
-                      <div key={version_group.name}>
-                        <h4>Versão do Grupo</h4>
-                        <p id={styles.groupName}>{version_group.name}</p>
-                        <div>
-                          {effect_entries.map(({ effect }) => (
-                            <p key={effect}>{effect}</p>
-                          ))}
+              {abilityData.effect_entries?.length !== 0 && (
+                <div id={styles.effect_entries}>
+                  <h3>Efeitos da habilidade</h3>
+                  <div>
+                    {abilityData.effect_entries?.map(
+                      ({ effect, short_effect }, index) => (
+                        <div key={index}>
+                          <p>{short_effect}</p>
+                          <p>{effect}</p>
                         </div>
-                      </div>
-                    )
-                  )}
+                      )
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
 
-              <div id={styles.pokemons}>
-                <h3>Pokémons que poderiam ter esta habilidade</h3>
-                <div>
-                  {abilityData.pokemon?.map(({ pokemon }) => (
-                    <Link key={pokemon.name} href={`/pokemon/${pokemon.name}`}>
-                      <a onClick={handlePokemon}>{pokemon.name}</a>
-                    </Link>
-                  ))}
+              {abilityData.effect_changes?.length !== 0 && (
+                <div id={styles.effect_changes}>
+                  <h3>
+                    Efeitos anteriores que a habilidade teve em outros grupos
+                  </h3>
+                  <div>
+                    {abilityData.effect_changes?.map(
+                      ({ version_group, effect_entries }) => (
+                        <div key={version_group.name}>
+                          <h4>Versão do Grupo</h4>
+                          <p id={styles.groupName}>{version_group.name}</p>
+                          <div>
+                            {effect_entries.map(({ effect }) => (
+                              <p key={effect}>{effect}</p>
+                            ))}
+                          </div>
+                        </div>
+                      )
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
+
+              {abilityData.pokemon?.length !== 0 && (
+                <div id={styles.pokemons}>
+                  <h3>Pokémons que poderiam ter esta habilidade</h3>
+                  <div>
+                    {abilityData.pokemon?.map(({ pokemon }) => (
+                      <Link
+                        key={pokemon.name}
+                        href={`/pokemon/${pokemon.name}`}
+                      >
+                        <a onClick={handlePokemon}>{pokemon.name}</a>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </>
           )}
         </div>

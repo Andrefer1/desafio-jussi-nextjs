@@ -12,7 +12,7 @@ export function Footer() {
     <footer className={styles.container}>
       <div className={styles.content}>
         <div>
-          <Link href="#wpp-company">
+          <Link href="#/wpp-company">
             <a>
               <Image
                 id={styles.logoWpp}
@@ -24,17 +24,17 @@ export function Footer() {
         </div>
 
         <div>
-          <Link href="#facebook">
+          <Link href="#/facebook">
             <a>
               <FaFacebookF className={styles.icon} size={22} />
             </a>
           </Link>
-          <Link href="#instagram">
+          <Link href="#/instagram">
             <a>
               <BsInstagram className={styles.icon} size={22} />
             </a>
           </Link>
-          <Link href="#linkedin">
+          <Link href="#/linkedin">
             <a>
               <FaLinkedinIn className={styles.icon} size={22} />
             </a>

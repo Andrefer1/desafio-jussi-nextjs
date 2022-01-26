@@ -1,0 +1,22 @@
+.container {
+  border: solid 1px;
+  margin: 0 auto;
+  padding-top: 5rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  border: solid 1px red;
+  width: 100%;
+  max-width: 700px;
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+}
