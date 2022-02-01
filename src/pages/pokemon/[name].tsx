@@ -1,4 +1,9 @@
 import { useState } from "react";
+import { GetStaticPaths, GetStaticProps } from "next";
+import { useRouter } from "next/router";
+import Head from "next/head";
+import axios, { AxiosResponse } from "axios";
+
 import { SiPokemon } from "react-icons/si";
 import { CgGhostCharacter } from "react-icons/cg";
 import { MdCatchingPokemon } from "react-icons/md";
@@ -6,14 +11,10 @@ import { ImPower } from "react-icons/im";
 import { IoMdStats } from "react-icons/io";
 import { GiDiscGolfBag, GiSwordsEmblem } from "react-icons/gi";
 import { GrCircleInformation } from "react-icons/gr";
-import axios, { AxiosResponse } from "axios";
-import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
-import Head from "next/head";
 
 import { AbilityPokemonModal } from "../../components/AbilityPokemonModal";
 
-import Custom404 from "../404/404";
+import Custom404 from "../404";
 
 import styles from "./pokemonPost.module.scss";
 
@@ -249,22 +250,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // console.log(`Building name: ${params?.name}`);
-
   const response: AxiosResponse<PokemonProps> = await axios.get(
     `https://pokeapi.co/api/v2/pokemon/${params?.name}`
   );
-
-  if (!response) {
-    return {
-      notFound: true,
-    };
-  }
 
   const res = response.data;
 

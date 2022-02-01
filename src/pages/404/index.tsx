@@ -11,7 +11,7 @@ export default function Custom404(): JSX.Element {
 
       <div className={styles.content}>
         <h1>404</h1>
-        <p>Página Não Encontrada! :{"("} </p>
+        <p>Não foi possível encontrar este Pokémon! :{"("} </p>
       </div>
     </div>
   );
